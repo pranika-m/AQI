@@ -1,0 +1,329 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 400;
+  
+  background-color: black; /* This will set the background color to black */
+  color: white; /* Changing text color to white for contrast */
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: black; /* Sets the background color to black */
+  color: white; /* Changes text color to white for contrast */
+}
+
+
+.bg {
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(30, 30, 30, 0.7), rgba(89, 84, 84, 0.7)), url(images/a1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+nav {
+  display: flex;
+  padding: 2% 6%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav img {
+  width: 150px;
+}
+
+.nav-links {
+  flex: 1;
+  text-align: right;
+}
+
+.nav-links ul {
+  list-style: none;
+}
+
+.nav-links ul li {
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+}
+
+.nav-links ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 19px;
+}
+
+.nav-links ul li::after {
+  content: '';
+  width: 0;
+  height: 2px;
+  background: #f44336;
+  display: block;
+  margin: auto;
+  transition: width 0.5s;
+}
+
+.nav-links ul li:hover::after {
+  width: 100%;
+}
+
+.text-box {
+  width: 90%;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.text-box h1 {
+  font-size: 60px;
+  color: black;
+}
+
+.text-box h2 {
+  margin: 10px 0 40px;
+  font-size: 30px;
+  color: black;
+}
+
+.hero-btn {
+  display: inline-block;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  border: 1px solid rgb(255, 255, 255);
+  padding: 12px 34px;
+  font-size: 23px;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+  transition: border 0.5s, background 0.5s;
+}
+
+.hero-btn:hover {
+  border-color: #f44336;
+  background: #f44336;
+}
+
+.index {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;
+  position: relative; /* Ensures the pseudo-element is positioned relative to this container */
+  overflow: hidden; /* Prevents any part of the pseudo-element from overflowing outside the .index container */
+}
+
+.index::before {
+  content: ""; /* Required for pseudo-elements to display */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://t3.ftcdn.net/jpg/03/45/37/40/360_F_345374024_toXIjm8hecDggxAgFZ9nJRvT4v2rlQ4V.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px); /* Adjust the blur intensity as needed */
+  z-index: -1; /* Ensures the pseudo-element is behind the content */
+}
+
+h1 {
+  font-size: 36px; /* Example: Set an appropriate font size */
+  font-weight: 600;
+}
+p{
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 300;
+  line-height:22px;
+  padding: 10px;
+}
+.row {
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pg {
+  flex-basis: 28%;
+  background: #292828;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  padding: 15px 10px;
+  box-sizing: border-box;
+  transition: transform 0.5s ease
+}
+h2{
+  text-align: center;
+  font-weight: 600;
+  margin: 10px 0
+}
+.pg:hover{
+  box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+  transform: scale(1.05);
+}
+.cities{
+  width:80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 50px;
+}
+/* Container for pictures */
+
+.pic {
+  display: flex;
+  justify-content: space-between; /* Distribute space between pictures */
+  align-items: center; /* Align pictures vertically */
+  flex-wrap: wrap; /* Allow the items to wrap if not enough space */
+  gap: 20px; /* Optional: Adds gap between pictures */
+}
+
+/* Individual pictures */
+.picture {
+  flex-basis: calc(33.333% - 20px); /* Adjust based on gap and number of items */
+  border-radius: 10px;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.picture img {
+  width: 100%; /* Ensure images fill the container */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 0.5s ease; /* Optional: Add a zoom effect on hover */
+}
+
+.picture:hover img {
+  transform: scale(1.05); /* Optional: Zoom effect on hover */
+}
+
+/* Style for .pictext to initially hide the text */
+.pictext {
+  background: rgba(84, 80, 80, 0.7);
+  color: white; /* Ensure text color contrasts with the background for readability */
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center; /* Center the text horizontally */
+  align-items: center; /* Center the text vertically */
+  opacity: 0; /* Make the text fully transparent */
+  visibility: hidden; /* Hide the text */
+  transition: opacity 0.5s ease, visibility 0.5s; /* Smooth transition for opacity and visibility */
+}
+
+/* Adjust the parent .picture hover to change properties of .pictext */
+.picture:hover .pictext {
+  opacity: 1; /* Make the text fully opaque (visible) */
+  visibility: visible; /* Make the text visible */
+}
+.pictext{
+  width: 100%;
+  font-weight: 500;
+  color: #fff;
+  font-size: 26px;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  position: absolute;
+}
+.about{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;
+}
+.aqinow{
+  flex-basis: 31%;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  text-align: left;
+}
+.aqinow img{
+  width: 100%;
+  border-radius: 10px;
+}
+.aqinow p{
+  padding: 0;
+}
+.aqinow h3{
+  margin-top: 16px;
+  margin-bottom: 15px;
+  text-align: left; 
+}
+
+/*---new onw------*/
+.precautions{
+  width: 80%;
+  margin: auto;
+  padding-top: 100px;
+  text-align: center;
+}
+.pre1 {
+  flex-basis: 44%;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  text-align: left;
+  background: #3f3f3f;
+  padding: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center; /* Ensure vertical alignment is centered */
+}
+
+.pre1 img {
+  height: 40px;
+  margin-right: 30px; /* Adjust spacing between the image and the text */
+  border-radius: 50%;
+  margin-left: 5px;
+  width: min-content;
+}
+
+.pre1 p {
+  margin: 0; /* Remove default margin to avoid unnecessary spacing */
+  flex-grow: 1; /* Let the text take up available space */
+  padding: 0;
+}
+
+.pre1 h3{
+  margin-top: 15px;
+  text-align: left;
+}
+
+.last{
+  margin:100px auto;
+  width: 80%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(99, 93, 93, 0.7)),url(images/a4.webp);
+  background-position:cover;
+  border-radius: 10px;
+  background-size: cover;
+  text-align: center;
+  padding: 100px 0;
+}
+.last h1{
+  margin-bottom: 40px;
+  padding: 0;
+}
+.last a{
+  color: white;
+}
+
+.footer{
+  width: 100%;
+  text-align: center;
+  padding: 30px 0;
+}
+.footer h2{
+  margin-bottom: 25px;
+  margin-top: 20px;
+  font-weight: 600;
+}

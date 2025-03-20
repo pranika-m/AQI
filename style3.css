@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 400;
+    
+    background-color: black; /* This will set the background color to black */
+    color: white; /* Changing text color to white for contrast */
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: black; /* Sets the background color to black */
+    color: white; /* Changes text color to white for contrast */
+  }
+
+  
+  .bg {
+    height: 25vh; /* Adjusts the height to cover only half of the viewport height */
+    width: auto; /* Keeps the width to span the full width of the viewport */
+    background-image: linear-gradient(rgba(30, 30, 30, 0.7), rgba(19, 18, 18, 0.7)), url(images/a1.jpg);
+    background-size: cover; /* Ensures the image covers the area, but will still clip as needed */
+    background-position: center; /* Aligns the image to the top of the element to show only the upper portion */
+}
+
+  nav {
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav img {
+    width: 150px;
+  }
+  
+  .nav-links {
+    flex: 1;
+    text-align: right;
+  }
+  
+  .nav-links ul {
+    list-style: none;
+  }
+  
+  .nav-links ul li {
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+  }
+  
+  .nav-links ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 19px;
+  }
+  
+  .nav-links ul li::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition: width 0.5s;
+  }
+  
+  .nav-links ul li:hover::after {
+    width: 100%;
+  }
+ .blog {
+  display: flex; /* Ensures flexbox layout */
+  justify-content: space-between; /* Space between content and comment box */
+  align-items: flex-start; /* Aligns items to the top */
+  width: 80%; /* As previously set, adjusts to your layout needs */
+  margin: auto; /* Centers the blog within its parent */
+  padding: 20px 0; /* Adds some vertical padding */
+}
+
+.blog-left {
+  width: 65%; /* Direct width specification instead of flex-basis for clarity */
+  margin-right: 5%; /* Ensures there is space between the content and the comment box */
+}
+
+.blog-left img {
+  width: 100%; /* Full width of the .blog-left container */
+  height: auto; /* Maintains aspect ratio */
+}
+
+.blog-left h2, .blog-left p {
+  color: #ffffff; /* White color for better readability */
+}
+
+.comment-box {
+  width: 30%; /* Width of the comment box */
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  justify-content: space-between;
+  margin: 50px 0;
+}
+
+.comment-box h3 {
+  color: #ffffff; /* Ensures text is visible on any background */
+  text-align:left;
+}
+
+.comment-form input, .comment-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 15px 0;
+  box-sizing: border-box;
+  background: #f0f0f0;
+  border: none;
+  outline: none;
+}
+
+.comment-form button{
+  margin: 10px 0;
+}

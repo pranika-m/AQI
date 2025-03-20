@@ -1,0 +1,117 @@
+
+  <div class="container">
+    <h1>Air Quality Index (AQI)</h1>
+    <p id="aqi-data">Loading...</p>
+    <button id="get-aqi">Get AQI</button>
+    <h2>What is Air Quality Index?</h2>
+    <p>The Air Quality Index (AQI) is a numerical score that reflects the level of air pollution in a given location.<br>
+       It helps individuals understand the health risks associated with breathing the air 
+       <br>and provides guidance on activities they can take to protect themselves.</p>
+
+    <h2>Understanding AQI Levels in India</h2>
+    <p>The Central Pollution Control Board (CPCB) of India categorizes AQI levels with corresponding health impacts as follows:<br>
+      <a target=# href="https://airquality.cpcb.gov.in/ccr/">Click Here to Know more</a></p>
+    <ul class="Index">
+      <li><b>Good (0-50):</b> Minimal impact on public health.</li>
+      <li><b>Moderate (51-100):</b> May cause breathing discomfort to sensitive individuals, particularly those with lung issues.</li>
+      <li><b>Poor (101-200):</b> May cause breathing problems, coughing, and irritation of the eyes, nose, and throat in everyone.</li>
+      <li><b>Very Poor (201-300):</b> May cause respiratory illness to people with heart or lung disease. Healthy people may experience reduced tolerance to physical activity.</li>
+      <li><b>Severe (301-400):</b> May cause serious health problems to everyone. Limit outdoor activity.</li>
+      <li><b>Severe+ (401+):</b> Emergency conditions. Healthy people experience respiratory illness. Everyone should avoid outdoor activity.</li>
+    </ul>
+
+    <h2>Causes of Air Pollution</h2>
+    <ul id="pollution-causes">
+      <li>Vehicle Emissions: Cars, trucks, and buses release harmful pollutants like nitrogen oxides and particulate matter.</li>
+      <li>Industrial Activities: Factories and power plants emit pollutants like sulfur dioxide and volatile organic compounds.</li>
+      <li>Burning Fossil Fuels: The burning of coal, oil, and natural gas releases pollutants into the atmosphere.</li>
+      <li>Agricultural Practices: Burning of agricultural waste and dust from tilling contribute to air pollution.</li>
+      <li>Natural Sources: Wildfires, volcanic eruptions, and dust storms can also impact air quality.</li>
+    </ul>
+    <h2>Improving Air Quality</h2>
+    <ul id="pollution-solutions">
+      <li>Use Public Transport or Cycle: Reduce reliance on private vehicles.</li>
+      <li>Conserve Energy: Reduce energy consumption at home and work to decrease emissions from power plants.</li>
+      <li>Support Renewable Energy: Advocate for policies that encourage solar, wind, and other renewable energy sources.</li>
+      <li>Reduce, Reuse, Recycle: Minimize waste generation to lessen pollution from waste incineration.</li>
+      <li>Plant Trees: Trees act as natural air filters, absorbing pollutants.</li>
+    </ul>
+  </div>
+  <script src="script.js"></script>
+
+
+
+
+
+
+
+
+
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  #aqi-data {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  #get-aqi {
+    padding: 10px 20px;
+    border: 1px solid rebeccapurple;
+    cursor: pointer;
+  }
+  
+  h2 {
+    margin-top: 20px;
+  }
+  
+  ul {
+    list-style: disc;
+    padding-left: 20px;
+  }
+  body{
+    background-color: black;
+    color: white;
+    text-align: center;
+  }
+  .Index{
+    background-color: blue;
+  }
+
+
+
+
+const aqiDataElement = document.getElementById('aqi-data');
+const getAqiButton = document.getElementById('get-aqi');
+
+getAqiButton.addEventListener('click', getAqiData);
+
+function getAqiData() {
+  aqiDataElement.textContent = 'Fetching data...';
+
+  // Replace 'YOUR_API_KEY' with your actual API key
+  const apiKey = 'YOUR_API_KEY';
+  const location = { lat: 37.7749, lon: -122.4194 }; // Example coordinates (San Francisco)
+  
+  // You'll need to choose an Air Quality API and update the URL and logic accordingly
+  const url = `https://api.example.com/air-quality?lat=${location.lat}&lon=${location.lon}&key=${apiKey}`;
+
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      const aqi = data.aqi;
+      aqiDataElement.textContent = `AQI: ${aqi}`;
+    })
+    .catch(error => {
+      console.error('Error fetching AQI data:', error);
+      aqiDataElement.textContent = 'Error fetching data.';
+    });
+}

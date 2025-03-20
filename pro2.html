@@ -1,0 +1,63 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Air Quality Index (AQI)</title>
+  <link rel="stylesheet" href="style2.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+
+    <section>
+      <div class="bg">
+      <nav>
+        <a href="pro1.html"><img src="images/AQI-removebg-preview.png"></a>
+        <div class="nav-links">
+          <ul>
+           <li><a href="pro1.html" target="_blank">Home</a></li>
+            <li><a href="pro2.html" target="_blank">AQI</a></li>
+            <li><a href="pro3.html" target="_blank">Blog</a></li>
+            <li><a href=>Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </head>
+  <body>
+	<section class="aqi12">
+	<div class="root">
+		<h1 class="heading">Air Quality Indicator</h1>
+		<div class="location-container">
+			<h2 class="sub-heading">Enter City Name :</h2>
+			<label for="error-msg" style="color: red;"></label><br />
+			<input
+				type="text"
+				name="city"
+				placeholder="City Name"
+				id="city"
+				class="loc-input" />
+			<button class="search-btn">Search</button>
+		</div>
+		<div class="air-info">
+			<h2 class="sub-heading">Air Quality Index :</h2>
+			<span class="air-quality">...</span>
+			<span class="arr">&nbsp;&rarr;&nbsp;</span>
+			<span class="air-quality-status">...</span>
+			<div class="component-container air-parameters">
+				<h2 class="sub-heading">
+					Concentration of pollutants in air :
+				</h2>
+
+					<div class="component-val" data-comp="co">Carbon Monoxide: </div>
+					<div class="component-val" data-comp="no">Nitrogen Monoxide: </div>
+					<div class="component-val" data-comp="no2">Nitrogen Dioxide: </div>
+					<div class="component-val" data-comp="o3">Ozone: </div>
+					<div class="component-val" data-comp="so2">Sulphur Dioxide: </div>
+					<div class="component-val" data-comp="pm2_5">Fine Particles Matter: </div>
+					<div class="component-val" data-comp="pm10">Coarse Particulate Matter: </div>
+			</div>
+		</div>
+	</div>
+	<script src="./script2.js" defer></script>
+	</section>
+</body>
+</html>
